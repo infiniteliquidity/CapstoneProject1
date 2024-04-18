@@ -7,7 +7,8 @@ DFE Hyperion Data Science
 """
 
 
-#========= Pseudocode ==========
+
+#======== Pseudocode ==========
 """
 This program defines functions for investment and bond calculations.
 
@@ -20,14 +21,12 @@ Both functions prompt the user for input, perform calculations, and display roun
 """
 
 
-# start
+# Start
 import math
 
 
-#----- define functions-----#
-
+# Define functions
 def investment():
-
     """
     Calculates the future value of an investment based on principal, interest rate, and time.
     Handles both simple and compound interest.
@@ -78,7 +77,6 @@ def investment():
 
 
 def bond():
-
     """
     Calculates the monthly bond repayment amount.
     """
@@ -114,27 +112,24 @@ def bond():
     print("Your monthly repayment will be $", round(repayment, 2))
 
 
-#----- main program outline -----#
-
-'''
-  user given two optons for the finance calculator  
-  prompted to input either "bond" or "investment"
-  the program will convert all entries to lower case to remove case sensitive entries  
-  the program will use an infinite loop to ensure the user enters either "bond" or "investment"
-'''
-
-# main progran menu
-
+# Main program
 print("Menu:")
 print("investment - to calculate the amount of interest you'll earn on your investment bond")
 print("bond - to calculate the amount you'll have to pay on a home loan")
 
 
-# infinate loop to ensure that the user enters a correct value for "investment" or "bond"
-
+# Ensure user enters a valid choice ("investment" or "bond")
 while True:
     choice = input("Enter either 'investment' or 'bond' from the menu above to proceed: ").lower()
     if choice in ("bond", "investment"):
         break
     else:
-        print("Please make sure you have entered either 'bond' or '
+        print("Please make sure you have entered either 'bond' or 'investment'")
+
+# Call the chosen function based on user input
+if choice == "investment":
+    investment()
+elif choice == "bond":
+    bond()
+else:
+    print("Error: Invalid input")
